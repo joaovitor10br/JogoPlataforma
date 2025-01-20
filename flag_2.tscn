@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b30jk50y58l7u"]
+
+[ext_resource type="Script" path="res://flag_2.gd" id="1_kttt4"]
+[ext_resource type="Texture2D" uid="uid://clh1vdjner40q" path="res://Assets/Bandeira/bandeira_fase2.png" id="1_uy3l3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjgvc"]
+size = Vector2(18.25, 10.5)
+
+[node name="Flag2" type="Area2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_kttt4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uy3l3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6.875, -5.25)
+shape = SubResource("RectangleShape2D_yjgvc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

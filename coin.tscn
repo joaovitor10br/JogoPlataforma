@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://br3vdj84fiop1"]
+
+[ext_resource type="Script" path="res://scripts/coin.gd" id="1_7axao"]
+[ext_resource type="Texture2D" uid="uid://maj7dnx4op3b" path="res://Assets/Coletável/moeda_pulando.png" id="1_ljuuq"]
+[ext_resource type="Texture2D" uid="uid://dsq7dancnsm1d" path="res://Assets/Coletável/coleta.png" id="2_46htg"]
+[ext_resource type="AudioStream" uid="uid://unkxg6qsm4rx" path="res://Assets/Músicas/SomMoeda.wav" id="4_m0687"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8xtt"]
+atlas = ExtResource("2_46htg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhetn"]
+atlas = ExtResource("2_46htg")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oshvt"]
+atlas = ExtResource("1_ljuuq")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrmyo"]
+atlas = ExtResource("1_ljuuq")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4qnuw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8xtt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhetn")
+}],
+"loop": false,
+"name": &"coleta",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oshvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrmyo")
+}],
+"loop": true,
+"name": &"parado",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6mub0"]
+radius = 8.0
+
+[node name="Coin" type="Area2D"]
+scale = Vector2(2, 2)
+collision_layer = 4
+script = ExtResource("1_7axao")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4qnuw")
+animation = &"parado"
+autoplay = "parado"
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6mub0")
+
+[node name="coin_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_m0687")
+volume_db = -5.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

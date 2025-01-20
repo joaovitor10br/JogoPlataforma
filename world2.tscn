@@ -1,0 +1,439 @@
+[gd_scene load_steps=40 format=4 uid="uid://dpj54poy75anv"]
+
+[ext_resource type="Texture2D" uid="uid://c3jx7eiqqbs10" path="res://Assets/Blocos/grama.png" id="1_2dffl"]
+[ext_resource type="Texture2D" uid="uid://dnr31wycgvj1l" path="res://Assets/Blocos/tijolo.png" id="2_a4pcj"]
+[ext_resource type="Texture2D" uid="uid://bllegy8fgisvg" path="res://Assets/Blocos/pedra.png" id="3_o3rlh"]
+[ext_resource type="Texture2D" uid="uid://bycfyokyfbm2g" path="res://Assets/Blocos/preto.png" id="4_f75g3"]
+[ext_resource type="Texture2D" uid="uid://bg25nto1puluk" path="res://Assets/Blocos/tijolo_vermelho.png" id="5_bciol"]
+[ext_resource type="Texture2D" uid="uid://cx3i0t40ms5hh" path="res://Assets/Blocos/tronco_arvore.png" id="6_kmfh7"]
+[ext_resource type="Texture2D" uid="uid://cbdcjfrf1cn22" path="res://Assets/Blocos/copa.png" id="7_sgw14"]
+[ext_resource type="Texture2D" uid="uid://crh648ww1utsy" path="res://Assets/Blocos/marrom.png" id="8_6wvcn"]
+[ext_resource type="Texture2D" uid="uid://dpquf24oc22p3" path="res://Assets/Blocos/branco.png" id="9_q7y7o"]
+[ext_resource type="Texture2D" uid="uid://ds5owymw0qqoq" path="res://Assets/Ambiente/sol.png" id="10_v7wb6"]
+[ext_resource type="Texture2D" uid="uid://d0xb56b28mlw7" path="res://Assets/Ambiente/nuvem.png" id="11_iggwv"]
+[ext_resource type="PackedScene" uid="uid://dg4crvxsm3lip" path="res://scenes/spikes.tscn" id="12_hc2og"]
+[ext_resource type="PackedScene" uid="uid://b30jk50y58l7u" path="res://scenes/flag_2.tscn" id="13_4e4t4"]
+[ext_resource type="PackedScene" uid="uid://br3vdj84fiop1" path="res://scenes/coin.tscn" id="14_vxb6p"]
+[ext_resource type="PackedScene" uid="uid://c3h2tdp4f6mm7" path="res://scenes/player.tscn" id="15_k6i5f"]
+[ext_resource type="PackedScene" uid="uid://7om7elg7vt0t" path="res://scenes/enemy.tscn" id="16_xxeit"]
+[ext_resource type="PackedScene" uid="uid://didyn0dah1k55" path="res://scenes/enemy2.tscn" id="17_bq2fa"]
+[ext_resource type="Texture2D" uid="uid://4kfmsiygtrhg" path="res://Assets/Botões/botao_esquerdo.png" id="18_av4wu"]
+[ext_resource type="Texture2D" uid="uid://bk5ur501n54to" path="res://Assets/Botões/botao_esquerdo_pressionado.png" id="19_t8d8v"]
+[ext_resource type="Texture2D" uid="uid://b2m6kh5p5nia0" path="res://Assets/Botões/botao_direito.png" id="20_tqyvx"]
+[ext_resource type="Texture2D" uid="uid://dso0ce027bbb2" path="res://Assets/Botões/botao_direito_pressionado.png" id="21_47du7"]
+[ext_resource type="Texture2D" uid="uid://cl4mo3qgui3l4" path="res://Assets/Botões/botao_pulo.png" id="22_mivak"]
+[ext_resource type="Texture2D" uid="uid://cjtgfmo01ycyv" path="res://Assets/Botões/botao_pulo_pressionado.png" id="23_wcpk8"]
+[ext_resource type="AudioStream" uid="uid://drwwtj1likkry" path="res://Assets/Músicas/MusicaFase2 .wav" id="24_5pphn"]
+[ext_resource type="Script" path="res://hud_manager.gd" id="25_nrw46"]
+[ext_resource type="Texture2D" uid="uid://w1qswub5ahrx" path="res://Assets/Coletável/moeda.png" id="26_p738d"]
+[ext_resource type="FontFile" uid="uid://dd2bfajb23lof" path="res://Assets/Fonte/Retro Gaming.ttf" id="27_rnlbs"]
+[ext_resource type="Texture2D" uid="uid://dkx7wbuinrr0w" path="res://Assets/Personagem/personagem.png" id="28_rc8m6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eg0kc"]
+texture = ExtResource("1_2dffl")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pwvsa"]
+texture = ExtResource("2_a4pcj")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ypkcl"]
+texture = ExtResource("3_o3rlh")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fl8qs"]
+texture = ExtResource("4_f75g3")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ybwqc"]
+texture = ExtResource("5_bciol")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h4j1w"]
+texture = ExtResource("6_kmfh7")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0l7tf"]
+texture = ExtResource("7_sgw14")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ywcd4"]
+texture = ExtResource("8_6wvcn")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n2yb7"]
+texture = ExtResource("9_q7y7o")
+0:0/0 = 0
+0:0/0/modulate = Color(1, 1, 1, 0)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/modulate = Color(1, 1, 1, 0)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/modulate = Color(1, 1, 1, 0)
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/modulate = Color(1, 1, 1, 0)
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_1cyyn"]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_eg0kc")
+sources/1 = SubResource("TileSetAtlasSource_pwvsa")
+sources/2 = SubResource("TileSetAtlasSource_fl8qs")
+sources/3 = SubResource("TileSetAtlasSource_ybwqc")
+sources/4 = SubResource("TileSetAtlasSource_h4j1w")
+sources/6 = SubResource("TileSetAtlasSource_0l7tf")
+sources/7 = SubResource("TileSetAtlasSource_ywcd4")
+sources/9 = SubResource("TileSetAtlasSource_n2yb7")
+sources/10 = SubResource("TileSetAtlasSource_ypkcl")
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_eep1o"]
+frame_0/texture = ExtResource("26_p738d")
+
+[node name="world2" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1248.0
+offset_bottom = 704.0
+color = Color(0.2, 0.533333, 0.870588, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAAABIAAAAAAAAAAAABABIAAAABAAAAAAACABIAAAAAAAAAAAADABIAAAABAAAAAAAEABIAAAAAAAAAAAAFABIAAAABAAAAAAAGABIAAAAAAAAAAAAHABIAAAABAAAAAAAIABIAAAAAAAAAAAAJABIAAAABAAAAAAAKABIAAAAAAAAAAAALABIAAAABAAAAAAAMABIAAAAAAAAAAAANABIAAAABAAAAAAAOABIAAAAAAAAAAAAPABIAAAABAAAAAAAQABIAAAAAAAAAAAARABIAAAABAAAAAAASABIAAAAAAAAAAAATABIAAAABAAAAAAAUABIAAAAAAAAAAAAVABIAAAABAAAAAAAWABIAAAAAAAAAAAAXABIAAAABAAAAAAAYABIAAAAAAAAAAAAZABIAAAABAAAAAAAaABIAAAAAAAAAAAAbABIAAAABAAAAAAAcABIAAAAAAAAAAAAdABIAAAABAAAAAAAeABIAAAAAAAAAAAAfABIAAAABAAAAAAAgABIAAAAAAAAAAAAhABIAAAABAAAAAAAiABIAAAAAAAAAAAAjABIAAAABAAAAAAAkABIAAAAAAAAAAAAlABIAAAABAAAAAAAmABIAAAAAAAAAAAAAABMAAAAAAAEAAAABABMAAAABAAEAAAAAABQAAAAAAAEAAAABABQAAAABAAEAAAAAABUAAAAAAAEAAAABABUAAAABAAEAAAACABMAAAAAAAEAAAADABMAAAABAAEAAAACABQAAAAAAAEAAAADABQAAAABAAEAAAACABUAAAAAAAEAAAADABUAAAABAAEAAAAEABMAAAAAAAEAAAAFABMAAAABAAEAAAAEABQAAAAAAAEAAAAFABQAAAABAAEAAAAEABUAAAAAAAEAAAAFABUAAAABAAEAAAAGABMAAAAAAAEAAAAHABMAAAABAAEAAAAGABQAAAAAAAEAAAAHABQAAAABAAEAAAAGABUAAAAAAAEAAAAHABUAAAABAAEAAAAIABMAAAAAAAEAAAAJABMAAAABAAEAAAAIABQAAAAAAAEAAAAJABQAAAABAAEAAAAIABUAAAAAAAEAAAAJABUAAAABAAEAAAAKABMAAAAAAAEAAAALABMAAAABAAEAAAAKABQAAAAAAAEAAAALABQAAAABAAEAAAAKABUAAAAAAAEAAAALABUAAAABAAEAAAAMABMAAAAAAAEAAAANABMAAAABAAEAAAAMABQAAAAAAAEAAAANABQAAAABAAEAAAAMABUAAAAAAAEAAAANABUAAAABAAEAAAAOABMAAAAAAAEAAAAPABMAAAABAAEAAAAOABQAAAAAAAEAAAAPABQAAAABAAEAAAAOABUAAAAAAAEAAAAPABUAAAABAAEAAAAQABMAAAAAAAEAAAARABMAAAABAAEAAAAQABQAAAAAAAEAAAARABQAAAABAAEAAAAQABUAAAAAAAEAAAARABUAAAABAAEAAAASABMAAAAAAAEAAAATABMAAAABAAEAAAASABQAAAAAAAEAAAATABQAAAABAAEAAAASABUAAAAAAAEAAAATABUAAAABAAEAAAAUABMAAAAAAAEAAAAVABMAAAABAAEAAAAUABQAAAAAAAEAAAAVABQAAAABAAEAAAAUABUAAAAAAAEAAAAVABUAAAABAAEAAAAWABMAAAAAAAEAAAAXABMAAAABAAEAAAAWABQAAAAAAAEAAAAXABQAAAABAAEAAAAWABUAAAAAAAEAAAAXABUAAAABAAEAAAAYABMAAAAAAAEAAAAZABMAAAABAAEAAAAYABQAAAAAAAEAAAAZABQAAAABAAEAAAAYABUAAAAAAAEAAAAZABUAAAABAAEAAAAaABMAAAAAAAEAAAAbABMAAAABAAEAAAAaABQAAAAAAAEAAAAbABQAAAABAAEAAAAaABUAAAAAAAEAAAAbABUAAAABAAEAAAAcABMAAAAAAAEAAAAdABMAAAABAAEAAAAcABQAAAAAAAEAAAAdABQAAAABAAEAAAAcABUAAAAAAAEAAAAdABUAAAABAAEAAAAeABMAAAAAAAEAAAAfABMAAAABAAEAAAAeABQAAAAAAAEAAAAfABQAAAABAAEAAAAeABUAAAAAAAEAAAAfABUAAAABAAEAAAAgABMAAAAAAAEAAAAhABMAAAABAAEAAAAgABQAAAAAAAEAAAAhABQAAAABAAEAAAAgABUAAAAAAAEAAAAhABUAAAABAAEAAAAiABMAAAAAAAEAAAAjABMAAAABAAEAAAAiABQAAAAAAAEAAAAjABQAAAABAAEAAAAiABUAAAAAAAEAAAAjABUAAAABAAEAAAAkABMAAAAAAAEAAAAlABMAAAABAAEAAAAkABQAAAAAAAEAAAAlABQAAAABAAEAAAAkABUAAAAAAAEAAAAlABUAAAABAAEAAAAmABMAAAAAAAEAAAAmABQAAAAAAAEAAAAmABUAAAAAAAEAAAD//wwAAQAAAAAAAAD//w0AAQAAAAAAAAD//w4AAQAAAAAAAAD//w8AAQAAAAAAAAD//xAAAQAAAAAAAAD//xEAAQAAAAAAAAD//xIAAQAAAAAAAAD//xMAAQAAAAAAAAD//xQAAQAAAAAAAAD//xUAAQAAAAAAAAAnAAwAAQAAAAAAAAAnAA0AAQAAAAAAAAAnAA4AAQAAAAAAAAAnAA8AAQAAAAAAAAAnABAAAQAAAAAAAAAnABEAAQAAAAAAAAAnABIAAQAAAAAAAAAnABMAAQAAAAAAAAAnABQAAQAAAAAAAAAnABUAAQAAAAAAAAAnAAsAAQAAAAAAAAAnAAoAAQAAAAAAAAAnAAgAAQAAAAAAAAAnAAkAAQAAAAAAAAAnAAcAAQAAAAAAAAAnAAYAAQAAAAAAAAACABEABAAAAAEAAAADABEABAABAAEAAAACAA8ABgAAAAAAAAADAA8ABgABAAAAAAACAA0ABgAAAAAAAAACAA4ABgAAAAEAAAADAA0ABgABAAAAAAADAA4ABgABAAEAAAABAA4ABgABAAAAAAABAA8ABgABAAEAAAABAA0ABgABAAEAAAACABAABAAAAAAAAAADABAABAABAAAAAAAEAA0ABgABAAAAAAAEAA4ABgABAAEAAAAEAA8ABgABAAAAAAAQABEACgAAAAAAAAAQABAACgAAAAAAAAASAA4ACgAAAAAAAAATAA4ACgAAAAAAAAAUAA4ACgAAAAAAAAAVAA4ACgAAAAAAAAAWAA4ACgAAAAAAAAARAA4ACgAAAAAAAAARAA0ACQAAAAAAAAAWAA0ACQAAAAAAAAA=")
+tile_set = SubResource("TileSet_1cyyn")
+
+[node name="Sol" type="Sprite2D" parent="."]
+position = Vector2(904, 224)
+scale = Vector2(5.5, 6)
+texture = ExtResource("10_v7wb6")
+
+[node name="Nuvem" type="Node2D" parent="."]
+position = Vector2(-128, 216)
+scale = Vector2(6.75, 5.75)
+
+[node name="Nuvem2" type="Sprite2D" parent="Nuvem"]
+position = Vector2(33.1852, 2.78261)
+texture = ExtResource("11_iggwv")
+
+[node name="Nuvem3" type="Sprite2D" parent="Nuvem"]
+position = Vector2(69.9259, -4.17391)
+texture = ExtResource("11_iggwv")
+
+[node name="Nuvem4" type="Sprite2D" parent="Nuvem"]
+position = Vector2(105.481, 4.17391)
+texture = ExtResource("11_iggwv")
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="Spikes" parent="Spikes" instance=ExtResource("12_hc2og")]
+position = Vector2(872, 568)
+
+[node name="Flags" type="Node2D" parent="."]
+position = Vector2(1208, 560)
+
+[node name="Flag2" parent="Flags" instance=ExtResource("13_4e4t4")]
+position = Vector2(-24, 0)
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("14_vxb6p")]
+position = Vector2(288, 560)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("14_vxb6p")]
+position = Vector2(616, 560)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("14_vxb6p")]
+position = Vector2(664, 560)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("14_vxb6p")]
+position = Vector2(600, 432)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("14_vxb6p")]
+position = Vector2(640, 432)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("14_vxb6p")]
+position = Vector2(680, 432)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("14_vxb6p")]
+position = Vector2(984, 560)
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2(8, 16)
+
+[node name="player" parent="Player" instance=ExtResource("15_k6i5f")]
+position = Vector2(208, 552)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("16_xxeit")]
+position = Vector2(464, 568)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("16_xxeit")]
+position = Vector2(408, 568)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("16_xxeit")]
+position = Vector2(624, 568)
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource("16_xxeit")]
+position = Vector2(720, 568)
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource("16_xxeit")]
+position = Vector2(1104, 560)
+
+[node name="Enemy_Red" parent="Enemies" instance=ExtResource("17_bq2fa")]
+position = Vector2(640, 424)
+
+[node name="Controls" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ui_left" type="TouchScreenButton" parent="Controls"]
+position = Vector2(16, 576)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("18_av4wu")
+texture_pressed = ExtResource("19_t8d8v")
+action = "ui_left"
+visibility_mode = 1
+
+[node name="ui_right" type="TouchScreenButton" parent="Controls"]
+position = Vector2(80, 576)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("20_tqyvx")
+texture_pressed = ExtResource("21_47du7")
+action = "ui_right"
+visibility_mode = 1
+
+[node name="ui_jump" type="TouchScreenButton" parent="Controls"]
+position = Vector2(1088, 576)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("22_mivak")
+texture_pressed = ExtResource("23_wcpk8")
+action = "ui_up"
+visibility_mode = 1
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_5pphn")
+volume_db = -10.0
+autoplay = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("25_nrw46")
+
+[node name="container" type="MarginContainer" parent="HUD/control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="coins_container" type="HBoxContainer" parent="HUD/control/container"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="coins_icon" type="TextureRect" parent="HUD/control/container/coins_container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = SubResource("AnimatedTexture_eep1o")
+
+[node name="coins_counter" type="Label" parent="HUD/control/container/coins_container/coins_icon"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -12.0
+offset_right = 58.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/line_spacing = 8
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("27_rnlbs")
+theme_override_font_sizes/font_size = 18
+text = "000"
+vertical_alignment = 1
+
+[node name="timer_container" type="HBoxContainer" parent="HUD/control/container"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="timer_label" type="Label" parent="HUD/control/container/timer_container"]
+layout_mode = 2
+theme_override_constants/line_spacing = 8
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("27_rnlbs")
+theme_override_font_sizes/font_size = 18
+text = "TIME:"
+vertical_alignment = 1
+
+[node name="timer_counter" type="Label" parent="HUD/control/container/timer_container"]
+layout_mode = 2
+theme_override_constants/line_spacing = 8
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("27_rnlbs")
+theme_override_font_sizes/font_size = 18
+text = "00:00"
+vertical_alignment = 1
+
+[node name="score_container" type="HBoxContainer" parent="HUD/control/container"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="score_label" type="Label" parent="HUD/control/container/score_container"]
+layout_mode = 2
+theme_override_constants/line_spacing = 8
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("27_rnlbs")
+theme_override_font_sizes/font_size = 18
+text = "SCORE:"
+vertical_alignment = 1
+
+[node name="score_counter" type="Label" parent="HUD/control/container/score_container"]
+layout_mode = 2
+theme_override_constants/line_spacing = 8
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("27_rnlbs")
+theme_override_font_sizes/font_size = 18
+text = "000000"
+vertical_alignment = 1
+
+[node name="life_container" type="HBoxContainer" parent="HUD/control/container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="life_icon" type="TextureRect" parent="HUD/control/container/life_container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("28_rc8m6")
+
+[node name="life_separator" type="Label" parent="HUD/control/container/life_container/life_icon"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -14.0
+offset_right = 58.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/line_spacing = 8
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("27_rnlbs")
+theme_override_font_sizes/font_size = 18
+text = "X"
+vertical_alignment = 1
+
+[node name="life_counter" type="Label" parent="HUD/control/container/life_container/life_icon"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -16.0
+offset_right = 82.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/line_spacing = 8
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("27_rnlbs")
+theme_override_font_sizes/font_size = 18
+text = "03"
+vertical_alignment = 1
