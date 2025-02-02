@@ -1,28 +1,28 @@
 [gd_scene load_steps=7 format=3 uid="uid://c3h2tdp4f6mm7"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_la2c3"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_5lpvc"]
 [ext_resource type="Texture2D" uid="uid://dkx7wbuinrr0w" path="res://Assets/Personagem/personagem.png" id="1_mcifb"]
-[ext_resource type="AudioStream" uid="uid://cawd3gnjmix0j" path="res://Assets/Músicas/SomPulo.wav" id="3_wuy42"]
+[ext_resource type="AudioStream" uid="uid://c72xthm1kitw0" path="res://Assets/Músicas/SomPulo.mp3" id="3_t688i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxupn"]
-size = Vector2(12, 8)
+size = Vector2(16.129, 10)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7p67n"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpacp"]
-size = Vector2(13.8947, 12)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igedw"]
+size = Vector2(11.5, 11)
 
 [node name="player" type="CharacterBody2D"]
-position = Vector2(8, -64)
+position = Vector2(9, -10)
 scale = Vector2(2, 2)
 collision_mask = 22
-script = ExtResource("1_la2c3")
+script = ExtResource("1_5lpvc")
 
 [node name="texture" type="Sprite2D" parent="."]
 texture = ExtResource("1_mcifb")
 
 [node name="collision" type="CollisionShape2D" parent="."]
-position = Vector2(2, 0)
+position = Vector2(1, -1)
 scale = Vector2(0.62, 1)
 shape = SubResource("RectangleShape2D_xxupn")
 
@@ -30,22 +30,33 @@ shape = SubResource("RectangleShape2D_xxupn")
 position = Vector2(0, -40)
 zoom = Vector2(1.5, 1.5)
 limit_left = 0
-limit_right = 2120
+limit_right = 1280
 
-[node name="anim" type="AnimatedSprite2D" parent="."]
+[node name="animation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7p67n")
 
 [node name="Audio_Jump" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_wuy42")
+stream = ExtResource("3_t688i")
 volume_db = -5.0
+parameters/looping = false
 
-[node name="Hurtbox" type="Area2D" parent="."]
+[node name="hurtbox" type="Area2D" parent="."]
+collision_layer = 0
 collision_mask = 4
 
-[node name="collision" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(1.28, -2)
-scale = Vector2(-0.605707, 0.946505)
-shape = SubResource("RectangleShape2D_bpacp")
-debug_color = Color(0.968627, 0, 0, 0.419608)
+[node name="collision" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(0.75, -2)
+shape = SubResource("RectangleShape2D_igedw")
+debug_color = Color(0.972549, 0, 0, 0.419608)
 
-[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[node name="ray_right" type="RayCast2D" parent="."]
+position = Vector2(6, 0)
+target_position = Vector2(7, 0)
+collision_mask = 4
+
+[node name="ray_left" type="RayCast2D" parent="."]
+position = Vector2(-4, 0)
+target_position = Vector2(-7, 0)
+collision_mask = 4
+
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

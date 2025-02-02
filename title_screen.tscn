@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcv8t0pnp7rtd"]
+
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_swgk6"]
+[ext_resource type="Texture2D" uid="uid://c8oadbo6xoits" path="res://Assets/Background/background.png" id="2_0hsph"]
+[ext_resource type="Texture2D" uid="uid://wfu78gbpmt6j" path="res://Assets/Game_Logo/Game_Logo.png" id="3_o4rtw"]
+[ext_resource type="Theme" uid="uid://djwqsa87qc73x" path="res://themes/title_screen.tres" id="4_rkqdx"]
+[ext_resource type="Texture2D" uid="uid://dkx7wbuinrr0w" path="res://Assets/Personagem/personagem.png" id="5_knura"]
+[ext_resource type="AudioStream" uid="uid://v2e426w0gaos" path="res://Assets/Músicas/MusicaTelaInicio.mp3" id="6_qjbxc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lcyww"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_swgk6")
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0hsph")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="game_logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("3_o4rtw")
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_lcyww")
+
+[node name="start_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_rkqdx")
+text = "START"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_lcyww")
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_lcyww")
+
+[node name="quit_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_rkqdx")
+text = "QUIT GAME"
+
+[node name="ghost" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_knura")
+expand_mode = 2
+flip_h = true
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_qjbxc")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit_btn" to="." method="_on_quit_btn_pressed"]

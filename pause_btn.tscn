@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgw4g5enc4012"]
+
+[ext_resource type="Texture2D" uid="uid://yru4sbf2du1e" path="res://Assets/Botões/botao_pausa_desativado.png" id="1_spvvh"]
+[ext_resource type="Texture2D" uid="uid://cuynrudqeg4mq" path="res://Assets/Botões/botao_pausa_ativado.png" id="2_grqrf"]
+[ext_resource type="Script" path="res://scripts/pause_btn.gd" id="3_lj0s7"]
+
+[node name="Pause_Btn" type="CanvasLayer"]
+
+[node name="pause_btn" type="TouchScreenButton" parent="."]
+process_mode = 3
+position = Vector2(142, 282)
+texture_normal = ExtResource("1_spvvh")
+texture_pressed = ExtResource("2_grqrf")
+action = "ui_cancel"
+script = ExtResource("3_lj0s7")
+
+[connection signal="pressed" from="pause_btn" to="pause_btn" method="_on_pressed"]

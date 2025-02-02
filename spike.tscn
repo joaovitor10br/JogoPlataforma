@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx5kkdkc3vuuh"]
+
+[ext_resource type="Texture2D" uid="uid://cbcn0xn6osa0b" path="res://Assets/Obstáculo/espinho.png" id="1_n8id0"]
+[ext_resource type="Script" path="res://scripts/spike.gd" id="1_vv80c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgjnj"]
+size = Vector2(33, 6)
+
+[node name="Spike" type="Area2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_vv80c")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_sgjnj")
+
+[node name="texture" type="Sprite2D" parent="."]
+texture = ExtResource("1_n8id0")
+
+[node name="texture2" type="Sprite2D" parent="."]
+position = Vector2(11, 0)
+texture = ExtResource("1_n8id0")
+
+[node name="texture3" type="Sprite2D" parent="."]
+position = Vector2(-11, 0)
+texture = ExtResource("1_n8id0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

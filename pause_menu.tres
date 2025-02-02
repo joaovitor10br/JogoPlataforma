@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cdkvqfs5xqcui"]
+
+[ext_resource type="FontFile" uid="uid://dd2bfajb23lof" path="res://Assets/Fonte/Retro Gaming.ttf" id="1_ijxfd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_inyiu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b4g4d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4gy2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p0btg"]
+
+[resource]
+Button/colors/font_focus_color = Color(1, 0.124571, 0.0864943, 1)
+Button/colors/font_hover_color = Color(1, 0.124571, 0.0864943, 1)
+Button/colors/font_hover_pressed_color = Color(1, 0.124571, 0.0864943, 1)
+Button/colors/font_pressed_color = Color(1, 0.124571, 0.0864943, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_ijxfd")
+Button/styles/focus = SubResource("StyleBoxEmpty_inyiu")
+Button/styles/hover = SubResource("StyleBoxEmpty_b4g4d")
+Button/styles/normal = SubResource("StyleBoxEmpty_h4gy2")
+Button/styles/pressed = SubResource("StyleBoxEmpty_p0btg")

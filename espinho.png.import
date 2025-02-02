@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsse7e5j3u8dt"
-path="res://.godot/imported/espinhos.png-300124a5e2cd1596df85fb72274098f5.ctex"
+uid="uid://cbcn0xn6osa0b"
+path="res://.godot/imported/espinho.png-9ba5b04a4e79961e51c99783f6482451.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Obstáculo/espinhos.png"
-dest_files=["res://.godot/imported/espinhos.png-300124a5e2cd1596df85fb72274098f5.ctex"]
+source_file="res://Assets/Obstáculo/espinho.png"
+dest_files=["res://.godot/imported/espinho.png-9ba5b04a4e79961e51c99783f6482451.ctex"]
 
 [params]
 

@@ -1,0 +1,55 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://djwqsa87qc73x"]
+
+[ext_resource type="FontFile" uid="uid://dd2bfajb23lof" path="res://Assets/Fonte/Retro Gaming.ttf" id="1_kshdx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rxmd"]
+bg_color = Color(0.208646, 0.404163, 0.808245, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.32549, 1, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28dxj"]
+bg_color = Color(0.683405, 0.0838111, 0.148267, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_638gw"]
+bg_color = Color(1, 0.0117647, 0.113725, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0uju"]
+bg_color = Color(0.937255, 0.235294, 0, 1)
+border_color = Color(6.08373e-05, 0.341662, 0.963595, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/fonts/font = ExtResource("1_kshdx")
+Button/styles/focus = SubResource("StyleBoxFlat_1rxmd")
+Button/styles/hover = SubResource("StyleBoxFlat_28dxj")
+Button/styles/normal = SubResource("StyleBoxFlat_638gw")
+Button/styles/pressed = SubResource("StyleBoxFlat_s0uju")

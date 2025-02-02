@@ -4,13 +4,13 @@ extends CharacterBody2D
 const SPEED = 700.0
 const JUMP_VELOCITY = -400.0
 
-@onready var wall_detector = $wall_detector as RayCast2D
-@onready var texture = $texture as Sprite2D
-@onready var anim = $anim as AnimationPlayer
+@onready var wall_detector := $wall_detector as RayCast2D
+@onready var texture := $texture as Sprite2D
+@onready var anim := $anim as AnimationPlayer
 
-@export var enemy := 100
+@export var enemy_score := 100
 
-var direction = -1
+var direction := -1
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -31,7 +31,8 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+
 func _on_anim_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "hurt":
-		Globals.score += enemy
+		Globals.score += enemy_score
 		queue_free()

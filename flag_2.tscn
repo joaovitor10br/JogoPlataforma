@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b30jk50y58l7u"]
 
-[ext_resource type="Script" path="res://flag_2.gd" id="1_kttt4"]
+[ext_resource type="Script" path="res://scripts/flag_2.gd" id="1_kttt4"]
 [ext_resource type="Texture2D" uid="uid://clh1vdjner40q" path="res://Assets/Bandeira/bandeira_fase2.png" id="1_uy3l3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjgvc"]
